@@ -1,0 +1,596 @@
+/***************/
+/*    FONTS    */
+/***************/
+
+@font-face {
+  font-family: "Smurf";
+  src: url("../fonts/Bazinga-Regular.otf") format("opentype"),
+}
+
+@font-face {
+  font-family: 'proximaNova';
+  src: url('../fonts/rene_bieder__milliard_medium-webfont.woff2') format('woff2'),
+       url('../fonts/rene_bieder__milliard_medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'proximaNovaLight';
+  src: url('../fonts//rene_bieder__milliard_light-webfont.woff2') format('woff2'),
+       url('../fonts/rene_bieder__milliard_light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+
+/**************/
+/* CSS REMEDY */
+/**************/
+
+/* naar een idee van Jen Simmons */
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+
+body {
+  margin:0;
+}
+
+button:not([disabled]) {
+  cursor:pointer;
+}
+
+img {
+  max-width:100%;
+}
+ 
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+
+:root {
+  --bg-color:#FFFFFF;
+  --bg-color-gras: #ACBD3D;
+  --header-primary-color:#0055A4;
+  --header-secondary-color:#ccc;
+  --header-text-shadow:#FFFFFF;
+  --box-shadow: #333;
+  --img-shadow: #0009;
+  --text-color-light: #ffffff;
+  --text-color: #1b1b1b;
+  --border-color:#1b1b1b;
+  --smurf-color-light:#63b2f9;
+  --error-color: #cc1c1c;
+  --error-color-hover: #ac0d0d;
+  --hover-button: linear-gradient(90deg, rgba(15, 109, 198, 1) 0%, rgba(26, 133, 233, 1) 50%, rgba(194, 225, 255, 100) 50%, rgba(194, 225, 255, 100) 100%);
+}
+
+/* DONKER THEMA */
+:root.darkmode {
+  --bg-color:#151515;
+  --bg-color-gras: #787c2c;
+  --header-primary-color:#cc1c1c;
+  --header-secondary-color:#767676;
+  --header-text-shadow:#d5d5d5;
+  --box-shadow: #333;
+  --img-shadow: #0009;
+  --text-color-light: #ffffff;
+  --text-color: #ffffff;
+  --border-color:#d5d5d5;
+  --smurf-color-light:#f03a3a;
+  --error-color: #cc1c1c;
+  --error-color-hover: #ac0d0d;
+  --hover-button: linear-gradient(90deg, rgba(2, 63, 120, 1) 0%, rgba(2, 63, 120, 1) 50%, rgba(0, 85, 164, 1)  50%, rgba(0, 85, 164, 1) 100%);
+}
+
+
+
+
+
+/*****************************************************/
+/*    HEADER + h1 + Button + animatie Surfen woord   */
+/*****************************************************/
+
+header{
+  position:fixed;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+
+	left:2em;
+	top:2em;
+	margin:0;
+  width: 100%;
+}
+
+header h1 {
+  font-family: Smurf, Arial, Helvetica, sans-serif;
+  font-size: 2.8em;
+  color:var(--header-primary-color);
+  text-shadow: 2px 2px 0px var(--header-text-shadow);
+
+  display: flex;
+
+  margin: 0;
+  height: 1.6em;
+  width: 8em;
+}
+
+/* voor het woord 'smurfen' */
+header h1 span{
+  padding: 0;
+}
+
+/* Beetje meer ruimte aan de linkerkant */
+header h1 span:nth-of-type(1){
+  margin-left: .25em;
+}
+
+/* animatie van het woord 'smurfen' */
+/* Bron https://codepen.io/alvarotrigo/pen/xxLvyOG?editors=1100 */
+header h1:hover span{
+  display: inline-block;
+
+  animation-name: springen;
+  animation-duration: 1s;
+  animation-iteration-count:infinite;
+}
+
+header h1:hover span:nth-of-type(2) {
+  animation-delay: .15s;
+}
+
+header h1:hover span:nth-of-type(3) {
+  animation-delay: .3s;
+}
+
+header h1:hover span:nth-of-type(4) {
+  animation-delay: .45s;
+}
+
+header h1:hover span:nth-of-type(5) {
+  animation-delay: .6s;
+}
+
+header h1:hover span:nth-of-type(6) {
+  animation-delay: .75s;
+}
+
+header h1:hover span:nth-of-type(7) {
+  animation-delay: .9s;
+}
+
+button{
+  font-family: proximaNova, Arial, Helvetica, sans-serif;
+
+  display: flex;
+  align-items: center;
+
+  appearance:none;
+	border:none;
+
+  box-shadow:0 .5em 0 var(--box-shadow);		
+  transform:translatey(-.5em);
+  padding: .6em .8em .6em .8em;
+  border-radius: .8em;
+  transition: .3s;
+}
+
+
+
+
+
+
+/**********************/
+/*    muziek button   */
+/**********************/
+
+header section button{
+  color: var(--text-color);
+
+  background: var(--hover-button);
+  background-size: 200% 100%;
+  background-position: 100% 0%;
+  padding: .2em 1.2em .2em .8em;
+
+  animation: schudden 2s linear ;
+  animation-delay: 7s;
+}
+
+/* image van smurf met trompet  */
+header section button img{
+  width: 4em;
+}
+
+/* Bron voor button states: https://codepen.io/shooft/pen/eYKdyxY?editors=1100 */
+header section button:hover{
+  cursor: url('../images/cursorPointer.png'), auto;
+	background-position: 0% 0%;
+  color: var(--text-color-light);
+}
+
+header section button:focus-visible{
+  transform:translatey(-.75em);
+	box-shadow:0 .75em 0 var(--border-color);
+  outline: none;
+}
+
+header section button:active{
+  transform:translatey(0);
+	box-shadow: 0 0 0 var(--border-color);
+}
+
+
+
+
+
+
+/*****************************/
+/*    Toggle -> dark mode    */
+/*****************************/
+
+header section:nth-of-type(2){
+  background-color: var(--bg-color);
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  height: fit-content;
+  width: 9.5em;
+  margin-right: 4em;
+  padding: .5em 1em 1em 1em;
+  border-radius: 1em;
+}
+
+header section:nth-of-type(2) P {
+  font-family: proximaNovaLight, Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* bron voor de toggle switch: https://www.w3schools.com/howto/howto_css_switch.asp  */
+header section:nth-of-type(2) label {
+  position: relative;
+  display: inline-block;
+
+  width: 3.75em;
+  height: 2.125em;
+}
+
+/* de default HTML checkbox niet weergeven en helemaal buiten beeld zetten*/
+header section:nth-of-type(2) label input {
+  position: absolute;
+  left:-9999em;
+}
+
+header section:nth-of-type(2) label span{
+  background-color: var(--header-secondary-color); 
+  border-radius: 2.125em;               
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: .4s;
+}
+
+/* cursor aanpassen bij hover  */
+header section:nth-of-type(2) label span:hover{
+  cursor: url('../images/cursorPointer.png'), auto;
+}
+
+/* Het bolletje in de toggle */
+header section:nth-of-type(2) label span:before {
+  content: "";
+  background-color: var(--bg-color);
+  border-radius: 50%;
+
+  position: absolute;
+
+  height: 1.625em;
+  width: 1.625em;
+  left: 0.25em;
+  bottom: 0.25em;
+  transition: .4s;
+}
+
+/* verschillende states voor de toggle */
+header section:nth-of-type(2) label input:checked + span {
+  background-color: var(--header-secondary-color);
+}
+
+header section:nth-of-type(2) label input:focus + span {
+  box-shadow: 0 0 0 .2em var(--header-primary-color);
+}
+
+/* bolletje verplaatsen als deze aangeklikt wordt */
+header section:nth-of-type(2) label input:checked + span:before {
+  -webkit-transform: translateX(1.625em);
+  -ms-transform: translateX(1.625em);
+  transform: translateX(1.625em);
+}
+
+
+
+
+
+/*****************************/
+/*      HEADER KEYFRAMES     */
+/*****************************/
+
+@media (prefers-reduced-motion: no-preference){
+  @keyframes springen {
+    0% {
+      transform:tanslateY(0);
+      animation-timing-function:cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    }
+
+    5% {
+      transform:translateY(0) scale(1.2, 0.8);
+    }  
+    
+    50%{
+      transform:translateY(-1em);
+      animation-timing-function:cubic-bezier(0.895, 0.030, 0.685, 0.220);
+    }
+    
+    100% {
+      transform:tanslateY(0);
+    }  
+  }
+
+  @keyframes schudden {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-13deg);
+    }
+    20% {
+      transform: rotateZ(8deg);
+    }
+    25% {
+      transform: rotateZ(-8deg);
+    }
+    30% {
+      transform: rotateZ(4deg);
+    }
+    35% {
+      transform: rotateZ(-2deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+}
+
+
+
+
+
+/********************/
+/*       MAIN       */
+/********************/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+  gap: 1em;
+  list-style-type: none;
+  padding: 0;
+}
+
+.grid-item {
+  padding: 1.5em;
+}
+
+/* Grootte van de smurfen  */
+.grid-item figure {
+  margin-bottom: 10px;
+  width: 6em;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+
+
+
+
+main ol{
+  /* background-image: url('../images/achtergrondBos.png');
+  background-size:475em 180em;
+  background-repeat:no-repeat;
+  background-position:left bottom; */
+
+  /* display:flex;
+  align-items:end; */
+
+  margin:0;
+  padding: 0;
+  /* padding:2em;
+  height:100vh;
+  width:475em; */
+}
+
+/* achtergrond aanpassen met dark mode */
+/* .darkmode main ol {
+  background-image: url('../images/achtergrondBosDonker.png');
+} */
+
+
+
+
+
+/**********************/
+/*       FIGURE       */
+/**********************/
+
+figure:focus img{
+  filter: drop-shadow(-0.1em 0.25em .2em var(--img-shadow));
+}
+
+/* tekst in tekswolk  */
+figcaption{
+  font-family: proximaNovaLight, Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  opacity: 0;
+  
+  position: absolute;
+  padding: 1.2em;
+  bottom: 8em;
+  width: 12.5em;
+
+  border: solid var(--border-color) 1px;
+  border-radius: 1.5em;
+}
+
+/* toon tekstwolk wanneer de muis over de smurf beweegt */
+figure:hover figcaption, 
+figure:focus figcaption{
+  opacity: 100%;
+}
+
+/* voor het driehoekje bij de tekstwolk  */
+figcaption::after{
+  content: "";
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 100% 0);
+  background-color: var(--bg-color);
+
+  position: absolute;
+  top:calc(100% - .7126em - 1px);
+  left:2.5em;
+  width: 1.5em;
+  height:1.5em;
+  transform: rotate(45deg) skew(20deg, 20deg);
+  border:solid 1px var(--border-color);
+}
+
+
+
+
+
+/**********************************/
+/*     ALLE ITEMS POSITIONEREN    */
+/**********************************/
+
+/* Grid item 1  */
+.grid-container .grid-item:nth-of-type(1) img {
+  transform: translateY(-4em);
+}
+
+.grid-container .grid-item:nth-of-type(1) figure img {
+  transform: translateY(-4em);
+}
+
+.grid-container .grid-item:nth-of-type(1) figure figcaption {
+  bottom: 17.5em;
+}
+
+/* NOG VOOR DE REST  */
+
+
+
+
+
+
+/**************************/
+/*    EXTRA'S ACHTERAAN   */
+/**************************/
+
+/* SMURF NIET button  */
+main ol li button:nth-of-type(1){
+  background: var(--error-color);
+  color: var(--text-color-light);
+
+  animation: schudden 2s linear;
+  animation-delay: 15s;
+  margin-right: 1.5em;
+  width: 10em;
+}
+
+/* Bron voor button states: https://codepen.io/shooft/pen/eYKdyxY?editors=1100 */
+main ol li button:nth-of-type(1):hover{
+  background: var(--error-color-hover);
+  cursor: url('../images/cursorOmlaag.png'), auto;
+}
+
+main ol li button:nth-of-type(1):focus-visible{
+  transform:translatey(-.75em);
+	outline: none;
+	box-shadow:0 .75em 0 var(--border-color);
+}
+
+main ol li button:nth-of-type(1):active{
+  transform:translatey(0);
+	box-shadow: 0 0 0 var(--border-color);
+}
+
+/* SMURF WEL button  */
+main ol li button:nth-of-type(2){
+  background: var(--hover-button);
+  background-size: 200% 100%;
+  background-position: 100% 0%;
+  color: var(--text-color);	
+  width: 10em;
+
+}
+
+main ol li button:nth-of-type(2):hover{
+	background-position: 0% 0%;
+  color: var(--text-color-light);
+  cursor: url('../images/cursorPointer.png'), auto;
+}
+
+main ol li button:nth-of-type(2):focus-visible{
+  transform:translatey(-.75em);
+	outline: none;
+	box-shadow:0 .75em 0 var(--border-color);
+}
+
+main ol li button:nth-of-type(2):active{
+  transform:translatey(0);
+	box-shadow: 0 0 0 var(--border-color);
+}
+
+
+
+
+
+
+
+
+/* NAAST ELKAAR */
+
+/* Gebruik flexbox om figure en img naast elkaar te plaatsen */
+.grid-container .grid-item {
+  display: flex;
+  flex-direction: row; 
+}
+
+/* Grootte van de smurfen aanpassen */
+.grid-container .grid-item figure img {
+  width: 100em;
+  height: auto;
+  margin-right: 10px; /* Voeg wat ruimte toe tussen figure en img */
+}
+
+/* Voeg wat extra ruimte toe aan de tekstwolk */
+figcaption {
+  margin-top: 10px;
+}
