@@ -382,10 +382,13 @@ header section:nth-of-type(2) label input:checked + span:before {
 /********************/
 /*       MAIN       */
 /********************/
+main{
+  margin-top: 8em;
+}
+
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
-  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(24em, 1fr));
   list-style-type: none;
   padding: 0;
 }
@@ -395,27 +398,24 @@ header section:nth-of-type(2) label input:checked + span:before {
 }
 
 /* Grootte van de smurfen  */
-.grid-item figure {
-  margin-bottom: 10px;
+.grid-item figure>img{
+  margin-top: 5em;
   width: 6em;
+  height: auto;
 }
 
-.grid-item img {
-  width: 100%;
+.grid-item>img {
+  width: 18em; 
   height: auto;
   border-radius: 8px;
 }
 
 
-
-
-
-
-main ol{
-  /* background-image: url('../images/achtergrondBos.png');
-  background-size:475em 180em;
+main {
+  background-image: url('../images/achtergrondNieuw.png');
+  background-size:97em 66.5em;
   background-repeat:no-repeat;
-  background-position:left bottom; */
+  background-position:left top;
 
   /* display:flex;
   align-items:end; */
@@ -428,9 +428,9 @@ main ol{
 }
 
 /* achtergrond aanpassen met dark mode */
-/* .darkmode main ol {
-  background-image: url('../images/achtergrondBosDonker.png');
-} */
+.darkmode main{
+  background-image: url('../images/achtergrondNieuwDonker.png');
+}
 
 
 
@@ -453,7 +453,7 @@ figcaption{
   
   position: absolute;
   padding: 1.2em;
-  bottom: 8em;
+  /* bottom: -2em; */
   width: 12.5em;
 
   border: solid var(--border-color) 1px;
@@ -489,24 +489,137 @@ figcaption::after{
 /*     ALLE ITEMS POSITIONEREN    */
 /**********************************/
 
+.grid-container .grid-item:nth-of-type(5)>img:nth-of-type(2) {
+  position: absolute;
+  left: 30.15em;
+  transform: translateX(-18em); 
+  opacity: 0;
+}
+
+.grid-container .grid-item:nth-of-type(5):hover>img:nth-of-type(2) {
+  opacity: 1;
+}
+
 /* Grid item 1  */
-.grid-container .grid-item:nth-of-type(1) img {
-  transform: translateY(-4em);
+.grid-container .grid-item:nth-of-type(1)>img {
+  transform: translateY(6.5em);
 }
 
 .grid-container .grid-item:nth-of-type(1) figure img {
-  transform: translateY(-4em);
+  transform: translateY(6em);
 }
 
 .grid-container .grid-item:nth-of-type(1) figure figcaption {
-  bottom: 17.5em;
+  bottom: 9em;
+  z-index: 3;
 }
 
-/* NOG VOOR DE REST  */
+
+
+/* Grid item 2  */
+.grid-container .grid-item:nth-of-type(2)>img {
+  transform: translateY(3em);
+}
+
+.grid-container .grid-item:nth-of-type(2) figure img {
+  transform: translateY(2.5em);
+}
+
+.grid-container .grid-item:nth-of-type(2) figure figcaption {
+  bottom: 12em;
+  z-index: 3;
+}
+
+
+/* Grid item 3  */
+.grid-container .grid-item:nth-of-type(3)>img {
+  transform: translateY(6em);
+}
+
+.grid-container .grid-item:nth-of-type(3) figure img {
+  transform: translateY(5em);
+}
+
+.grid-container .grid-item:nth-of-type(3) figure figcaption {
+  bottom: 10em;
+  z-index: 3;
+}
+
+
+/* Grid item 4  */
+.grid-container .grid-item:nth-of-type(4)>img {
+  transform: translateY(-1.5em);
+}
+
+.grid-container .grid-item:nth-of-type(4) figure img {
+  transform: translateY(-.6em);
+}
+
+.grid-container .grid-item:nth-of-type(4) figure figcaption {
+  bottom: 14em;
+  z-index: 4;
+}
+
+/* Grid item 5  */
+.grid-container .grid-item:nth-of-type(5)>img {
+  transform: translateY(-1.8em);
+}
+
+/* HOVER IMAGE MOET NOG */
+
+.grid-container .grid-item:nth-of-type(5) figure img {
+  transform: translateY(-3em);
+}
+
+.grid-container .grid-item:nth-of-type(5) figure figcaption {
+  bottom: 18em;
+  z-index: 4;
+}
+
+/* Grid item 6  */
+.grid-container .grid-item:nth-of-type(6)>img {
+  transform: translateY(.7em);
+}
+
+.grid-container .grid-item:nth-of-type(6) figure img {
+  transform: translateY(-.9em);
+}
+
+.grid-container .grid-item:nth-of-type(6) figure figcaption {
+  bottom: 16em;
+  z-index: 4;
+}
 
 
 
+/* Grid item 7  */
+.grid-container .grid-item:nth-of-type(7)>img {
+  transform: translateY(-10em);
+}
 
+.grid-container .grid-item:nth-of-type(7) figure img {
+  transform: translateY(-10em);
+}
+
+.grid-container .grid-item:nth-of-type(7) figure figcaption {
+  bottom: 24em;
+  z-index: 4;
+}
+
+
+/* Grid item 8  */
+.grid-container .grid-item:nth-of-type(8)>img {
+  transform: translateY(-9em);
+}
+
+.grid-container .grid-item:nth-of-type(8) figure img {
+  transform: translateY(-11em);
+}
+
+.grid-container .grid-item:nth-of-type(8) figure figcaption {
+  bottom: 24em;
+  z-index: 4;
+}
 
 
 /**************************/
@@ -590,7 +703,46 @@ main ol li button:nth-of-type(2):active{
   margin-right: 10px; /* Voeg wat ruimte toe tussen figure en img */
 }
 
-/* Voeg wat extra ruimte toe aan de tekstwolk */
-figcaption {
-  margin-top: 10px;
+
+
+
+
+
+
+.grid-item {
+  display: flex;
+  flex-direction: row; /* Zorg ervoor dat de items naast elkaar worden weergegeven */
+  align-items: center; /* Center de items verticaal in de grid-item */
+  position: relative; /* Voeg deze regel toe */
 }
+
+.grid-item figure {
+  margin-right: 10px; /* Voeg wat ruimte toe tussen figure en img */
+}
+
+.grid-item figure>img {
+  width: 6em;
+  height: auto;
+}
+
+figcaption {
+  font-family: proximaNovaLight, Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  opacity: 0;
+  padding: 1.2em;
+  width: 12.5em;
+  border: solid var(--border-color) 1px;
+  border-radius: 1.5em;
+  position: absolute;
+  bottom: 14em; 
+  left: 40%; /* Plaats het in het midden van de grid-item */
+  transform: translateX(-50%); /* Centreer horizontaal */
+}
+
+figure:hover figcaption,
+figure:focus figcaption {
+  opacity: 100%;
+}
+
+
