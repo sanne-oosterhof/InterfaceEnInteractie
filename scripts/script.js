@@ -15,7 +15,6 @@ var backgroundImage = document.querySelector("main ol.background-light");
 
 // Variabelen voor extra's achteraan 
 var smurfNietButton = document.querySelector("main ol li button:nth-of-type(1)");
-var smurfWelButton = document.querySelector("main ol li button:nth-of-type(2)");
 var smurfImgMetLiaan = document.querySelector("main ol li:nth-of-type(9) img:nth-of-type(1)");
 var gargamelImg = document.querySelector("main ol li:nth-of-type(10) img");
 var normaleSmurf = document.querySelector("main ol li:nth-of-type(9) img:nth-of-type(2)");
@@ -26,7 +25,6 @@ var normaleSmurf = document.querySelector("main ol li:nth-of-type(9) img:nth-of-
 geluidButton.onclick = smurfIntro;
 darkmodeToggle.addEventListener("change", switchTheme);
 smurfNietButton.addEventListener("click", gargamelMaaktKapot)
-smurfWelButton.addEventListener("click", smurfSwingen)
 
 
 
@@ -60,8 +58,4 @@ function gargamelMaaktKapot(){
   document.body.classList.add("gargamelLopen");
   smurfNietButton.textContent = "Dit is allemaal jouw schuld!";
   smurfWelButton.textContent = "Verkeerde knop gesmurft";
-}
-
-function smurfSwingen(){
-  smurfImgMetLiaan.classList.toggle("smurfSwingen");
 }

@@ -245,7 +245,7 @@ header section:nth-of-type(2){
   flex-direction: column;
 
   height: fit-content;
-  width: 9.5em;
+  width: 9.6em;
   margin-right: 4em;
   padding: .5em 1em 1em 1em;
   border-radius: 1em;
@@ -325,6 +325,7 @@ header section:nth-of-type(2) label input:checked + span:before {
 
 
 
+
 /*****************************/
 /*      HEADER KEYFRAMES     */
 /*****************************/
@@ -379,13 +380,27 @@ header section:nth-of-type(2) label input:checked + span:before {
 
 
 
+
 /********************/
 /*       MAIN       */
 /********************/
-main{
-  margin-top: 8em;
+
+main {
+  background-image: url('../images/achtergrondSmurf.png');
+  background-size:97em 104.6em;
+  background-repeat:no-repeat;
+  background-position:left top;
+
+  margin:0;
+  padding: 0;
 }
 
+/* achtergrond aanpassen met dark mode */
+.darkmode main{
+  background-image: url('../images/achtergrondNieuwDonker.png');
+}
+
+/* Grid en items binnen het grid */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(24em, 1fr));
@@ -393,44 +408,32 @@ main{
   padding: 0;
 }
 
-.grid-item {
+.grid-container .grid-item {
   padding: 1.5em;
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  position: relative; 
 }
 
-/* Grootte van de smurfen  */
-.grid-item figure>img{
-  margin-top: 5em;
-  width: 6em;
-  height: auto;
-}
-
-.grid-item>img {
+/* Grootte van de huisjes */
+.grid-container .grid-item>img {
   width: 18em; 
   height: auto;
   border-radius: 8px;
 }
 
-
-main {
-  background-image: url('../images/achtergrondNieuw.png');
-  background-size:97em 66.5em;
-  background-repeat:no-repeat;
-  background-position:left top;
-
-  /* display:flex;
-  align-items:end; */
-
-  margin:0;
-  padding: 0;
-  /* padding:2em;
-  height:100vh;
-  width:475em; */
+.grid-container .grid-item figure{
+  margin-right: .6em; 
 }
 
-/* achtergrond aanpassen met dark mode */
-.darkmode main{
-  background-image: url('../images/achtergrondNieuwDonker.png');
+/* Grootte van de smurfen  */
+.grid-container .grid-item figure>img{
+  /* margin-top: 5em; */
+  width: 6em;
+  height: auto;
 }
+
 
 
 
@@ -453,11 +456,14 @@ figcaption{
   
   position: absolute;
   padding: 1.2em;
-  /* bottom: -2em; */
   width: 12.5em;
 
   border: solid var(--border-color) 1px;
   border-radius: 1.5em;
+
+  bottom: 14em; 
+  left: 40%; /* Plaats het in het midden van de grid-item */
+  transform: translateX(-50%); /* Centreer horizontaal */
 }
 
 /* toon tekstwolk wanneer de muis over de smurf beweegt */
@@ -485,141 +491,138 @@ figcaption::after{
 
 
 
+
 /**********************************/
 /*     ALLE ITEMS POSITIONEREN    */
 /**********************************/
 
-.grid-container .grid-item:nth-of-type(5)>img:nth-of-type(2) {
-  position: absolute;
-  left: 30.15em;
-  transform: translateX(-18em); 
-  opacity: 0;
-}
-
-.grid-container .grid-item:nth-of-type(5):hover>img:nth-of-type(2) {
-  opacity: 1;
-}
-
-/* Grid item 1  */
+/* Grid item 1 */
 .grid-container .grid-item:nth-of-type(1)>img {
   transform: translateY(6.5em);
-}
-
+  }
+  
 .grid-container .grid-item:nth-of-type(1) figure img {
-  transform: translateY(6em);
+transform: translateY(6em);
 }
 
 .grid-container .grid-item:nth-of-type(1) figure figcaption {
-  bottom: 9em;
-  z-index: 3;
+bottom: 9em;
+z-index: 3;
 }
 
-
-
-/* Grid item 2  */
+/* Grid item 2 */
 .grid-container .grid-item:nth-of-type(2)>img {
-  transform: translateY(3em);
+transform: translateY(3em);
 }
 
 .grid-container .grid-item:nth-of-type(2) figure img {
-  transform: translateY(2.5em);
+transform: translateY(2.5em);
 }
 
 .grid-container .grid-item:nth-of-type(2) figure figcaption {
-  bottom: 12em;
-  z-index: 3;
+bottom: 12em;
+z-index: 3;
 }
 
-
-/* Grid item 3  */
+/* Grid item 3 */
 .grid-container .grid-item:nth-of-type(3)>img {
-  transform: translateY(6em);
+transform: translateY(6em);
 }
 
 .grid-container .grid-item:nth-of-type(3) figure img {
-  transform: translateY(5em);
+transform: translateY(5em);
 }
 
 .grid-container .grid-item:nth-of-type(3) figure figcaption {
-  bottom: 10em;
-  z-index: 3;
+bottom: 10em;
+z-index: 3;
 }
 
-
-/* Grid item 4  */
+/* Grid item 4 */
 .grid-container .grid-item:nth-of-type(4)>img {
-  transform: translateY(-1.5em);
+transform: translateY(-1.5em);
 }
 
 .grid-container .grid-item:nth-of-type(4) figure img {
-  transform: translateY(-.6em);
+transform: translateY(-.6em);
 }
 
 .grid-container .grid-item:nth-of-type(4) figure figcaption {
-  bottom: 14em;
-  z-index: 4;
+bottom: 14em;
+z-index: 4;
 }
 
-/* Grid item 5  */
+/* Grid item 5 */
 .grid-container .grid-item:nth-of-type(5)>img {
-  transform: translateY(-1.8em);
+transform: translateY(-1.8em);
 }
-
-/* HOVER IMAGE MOET NOG */
 
 .grid-container .grid-item:nth-of-type(5) figure img {
-  transform: translateY(-3em);
+transform: translateY(-3em);
 }
 
 .grid-container .grid-item:nth-of-type(5) figure figcaption {
-  bottom: 18em;
-  z-index: 4;
+bottom: 18em;
+z-index: 4;
 }
 
-/* Grid item 6  */
+/* Grid item 5 HOVER */
+.grid-container .grid-item:nth-of-type(5)>img:nth-of-type(2) {
+position: absolute;
+left: 12.15em;
+transform: translateY(-1.8em);
+opacity: 0;
+}
+
+.grid-container .grid-item:nth-of-type(5):hover>img:nth-of-type(2) {
+opacity: 1;
+}
+
+/* Grid item 6 */
 .grid-container .grid-item:nth-of-type(6)>img {
-  transform: translateY(.7em);
+transform: translateY(.7em);
 }
 
 .grid-container .grid-item:nth-of-type(6) figure img {
-  transform: translateY(-.9em);
+transform: translateY(-.9em);
 }
 
 .grid-container .grid-item:nth-of-type(6) figure figcaption {
-  bottom: 16em;
-  z-index: 4;
+bottom: 16em;
+z-index: 4;
 }
 
-
-
-/* Grid item 7  */
+/* Grid item 7 */
 .grid-container .grid-item:nth-of-type(7)>img {
-  transform: translateY(-10em);
+transform: translateY(-10em);
 }
 
 .grid-container .grid-item:nth-of-type(7) figure img {
-  transform: translateY(-10em);
+transform: translateY(-10em);
 }
 
 .grid-container .grid-item:nth-of-type(7) figure figcaption {
-  bottom: 24em;
-  z-index: 4;
+bottom: 24em;
+z-index: 4;
 }
 
-
-/* Grid item 8  */
+/* Grid item 8 */
 .grid-container .grid-item:nth-of-type(8)>img {
-  transform: translateY(-9em);
+transform: translateY(-9em);
 }
 
 .grid-container .grid-item:nth-of-type(8) figure img {
-  transform: translateY(-11em);
+transform: translateY(-11em);
 }
 
 .grid-container .grid-item:nth-of-type(8) figure figcaption {
-  bottom: 24em;
-  z-index: 4;
+bottom: 24em;
+z-index: 4;
 }
+
+
+
+
 
 
 /**************************/
@@ -627,7 +630,7 @@ figcaption::after{
 /**************************/
 
 /* SMURF NIET button  */
-main ol li button:nth-of-type(1){
+.grid-container .grid-item:nth-of-type(9) button{
   background: var(--error-color);
   color: var(--text-color-light);
 
@@ -638,111 +641,18 @@ main ol li button:nth-of-type(1){
 }
 
 /* Bron voor button states: https://codepen.io/shooft/pen/eYKdyxY?editors=1100 */
-main ol li button:nth-of-type(1):hover{
+.grid-container .grid-item:nth-of-type(9) button:hover{
   background: var(--error-color-hover);
   cursor: url('../images/cursorOmlaag.png'), auto;
 }
 
-main ol li button:nth-of-type(1):focus-visible{
+.grid-container .grid-item:nth-of-type(9) button:focus-visible{
   transform:translatey(-.75em);
 	outline: none;
 	box-shadow:0 .75em 0 var(--border-color);
 }
 
-main ol li button:nth-of-type(1):active{
+.grid-container .grid-item:nth-of-type(9) button:active{
   transform:translatey(0);
 	box-shadow: 0 0 0 var(--border-color);
 }
-
-/* SMURF WEL button  */
-main ol li button:nth-of-type(2){
-  background: var(--hover-button);
-  background-size: 200% 100%;
-  background-position: 100% 0%;
-  color: var(--text-color);	
-  width: 10em;
-
-}
-
-main ol li button:nth-of-type(2):hover{
-	background-position: 0% 0%;
-  color: var(--text-color-light);
-  cursor: url('../images/cursorPointer.png'), auto;
-}
-
-main ol li button:nth-of-type(2):focus-visible{
-  transform:translatey(-.75em);
-	outline: none;
-	box-shadow:0 .75em 0 var(--border-color);
-}
-
-main ol li button:nth-of-type(2):active{
-  transform:translatey(0);
-	box-shadow: 0 0 0 var(--border-color);
-}
-
-
-
-
-
-
-
-
-/* NAAST ELKAAR */
-
-/* Gebruik flexbox om figure en img naast elkaar te plaatsen */
-.grid-container .grid-item {
-  display: flex;
-  flex-direction: row; 
-}
-
-/* Grootte van de smurfen aanpassen */
-.grid-container .grid-item figure img {
-  width: 100em;
-  height: auto;
-  margin-right: 10px; /* Voeg wat ruimte toe tussen figure en img */
-}
-
-
-
-
-
-
-
-.grid-item {
-  display: flex;
-  flex-direction: row; /* Zorg ervoor dat de items naast elkaar worden weergegeven */
-  align-items: center; /* Center de items verticaal in de grid-item */
-  position: relative; /* Voeg deze regel toe */
-}
-
-.grid-item figure {
-  margin-right: 10px; /* Voeg wat ruimte toe tussen figure en img */
-}
-
-.grid-item figure>img {
-  width: 6em;
-  height: auto;
-}
-
-figcaption {
-  font-family: proximaNovaLight, Arial, Helvetica, sans-serif;
-  color: var(--text-color);
-  background-color: var(--bg-color);
-  opacity: 0;
-  padding: 1.2em;
-  width: 12.5em;
-  border: solid var(--border-color) 1px;
-  border-radius: 1.5em;
-  position: absolute;
-  bottom: 14em; 
-  left: 40%; /* Plaats het in het midden van de grid-item */
-  transform: translateX(-50%); /* Centreer horizontaal */
-}
-
-figure:hover figcaption,
-figure:focus figcaption {
-  opacity: 100%;
-}
-
-
