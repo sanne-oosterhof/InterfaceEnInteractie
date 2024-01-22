@@ -38,6 +38,8 @@
 
 body {
   margin:0;
+  background-color: var(--pagina-bg-color);
+  cursor: url('../images/cursorNormaal.png'), auto;
 }
 
 button:not([disabled]) {
@@ -57,6 +59,7 @@ img {
 /*********************/
 
 :root {
+  --pagina-bg-color:#A7CEEF;
   --bg-color:#FFFFFF;
   --bg-color-gras: #ACBD3D;
   --header-primary-color:#0055A4;
@@ -75,7 +78,8 @@ img {
 
 /* DONKER THEMA */
 :root.darkmode {
-  --bg-color:#151515;
+  --pagina-bg-color:#222222;
+  --bg-color:#3a3a3a;
   --bg-color-gras: #787c2c;
   --header-primary-color:#cc1c1c;
   --header-secondary-color:#767676;
@@ -245,7 +249,7 @@ header section:nth-of-type(2){
   flex-direction: column;
 
   height: fit-content;
-  width: 9.6em;
+  width: 11em;
   margin-right: 4em;
   padding: .5em 1em 1em 1em;
   border-radius: 1em;
@@ -393,6 +397,7 @@ main {
 
   margin:0;
   padding: 0;
+  overflow: hidden;
 }
 
 /* achtergrond aanpassen met dark mode */
@@ -404,8 +409,10 @@ main {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(24em, 1fr));
+  grid-row-gap: 8em;
   list-style-type: none;
-  padding: 0;
+  padding: 17em 0 0 0;
+
 }
 
 .grid-container .grid-item {
@@ -429,7 +436,7 @@ main {
 
 /* Grootte van de smurfen  */
 .grid-container .grid-item figure>img{
-  /* margin-top: 5em; */
+  margin-top: 3.5em;
   width: 6em;
   height: auto;
 }
@@ -498,25 +505,25 @@ figcaption::after{
 
 /* Grid item 1 */
 .grid-container .grid-item:nth-of-type(1)>img {
-  transform: translateY(6.5em);
+  transform: translateY(3em);
   }
   
 .grid-container .grid-item:nth-of-type(1) figure img {
-transform: translateY(6em);
+transform: translateY(3em);
 }
 
 .grid-container .grid-item:nth-of-type(1) figure figcaption {
-bottom: 9em;
+bottom: 11em;
 z-index: 3;
 }
 
 /* Grid item 2 */
 .grid-container .grid-item:nth-of-type(2)>img {
-transform: translateY(3em);
+transform: translateY(1em);
 }
 
 .grid-container .grid-item:nth-of-type(2) figure img {
-transform: translateY(2.5em);
+transform: translateY(1.5em);
 }
 
 .grid-container .grid-item:nth-of-type(2) figure figcaption {
@@ -526,51 +533,46 @@ z-index: 3;
 
 /* Grid item 3 */
 .grid-container .grid-item:nth-of-type(3)>img {
-transform: translateY(6em);
+transform: translateY(2em);
 }
 
 .grid-container .grid-item:nth-of-type(3) figure img {
-transform: translateY(5em);
+transform: translateY(2em);
 }
 
 .grid-container .grid-item:nth-of-type(3) figure figcaption {
-bottom: 10em;
+bottom: 11.7em;
 z-index: 3;
 }
 
 /* Grid item 4 */
 .grid-container .grid-item:nth-of-type(4)>img {
-transform: translateY(-1.5em);
+transform: translateY(1em);
 }
 
 .grid-container .grid-item:nth-of-type(4) figure img {
-transform: translateY(-.6em);
+transform: translateY(3.3em);
 }
 
 .grid-container .grid-item:nth-of-type(4) figure figcaption {
-bottom: 14em;
+bottom: 9em;
 z-index: 4;
 }
 
 /* Grid item 5 */
-.grid-container .grid-item:nth-of-type(5)>img {
-transform: translateY(-1.8em);
-}
-
 .grid-container .grid-item:nth-of-type(5) figure img {
-transform: translateY(-3em);
+transform: translateY(-.1em);
 }
 
 .grid-container .grid-item:nth-of-type(5) figure figcaption {
-bottom: 18em;
+bottom: 13.2em;
 z-index: 4;
 }
 
 /* Grid item 5 HOVER */
 .grid-container .grid-item:nth-of-type(5)>img:nth-of-type(2) {
 position: absolute;
-left: 12.15em;
-transform: translateY(-1.8em);
+left: 10.6em;
 opacity: 0;
 }
 
@@ -580,43 +582,43 @@ opacity: 1;
 
 /* Grid item 6 */
 .grid-container .grid-item:nth-of-type(6)>img {
-transform: translateY(.7em);
+transform: translateY(4em);
 }
 
 .grid-container .grid-item:nth-of-type(6) figure img {
-transform: translateY(-.9em);
+transform: translateY(2em);
 }
 
 .grid-container .grid-item:nth-of-type(6) figure figcaption {
-bottom: 16em;
+bottom: 11em;
 z-index: 4;
 }
 
 /* Grid item 7 */
 .grid-container .grid-item:nth-of-type(7)>img {
-transform: translateY(-10em);
+transform: translateY(-.5em);
 }
 
 .grid-container .grid-item:nth-of-type(7) figure img {
-transform: translateY(-10em);
+transform: translateY(-1em);
 }
 
 .grid-container .grid-item:nth-of-type(7) figure figcaption {
-bottom: 24em;
+bottom: 14em;
 z-index: 4;
 }
 
 /* Grid item 8 */
 .grid-container .grid-item:nth-of-type(8)>img {
-transform: translateY(-9em);
+transform: translateY(.5em);
 }
 
 .grid-container .grid-item:nth-of-type(8) figure img {
-transform: translateY(-11em);
+transform: translateY(.3em);
 }
 
 .grid-container .grid-item:nth-of-type(8) figure figcaption {
-bottom: 24em;
+bottom: 13em;
 z-index: 4;
 }
 
@@ -655,4 +657,177 @@ z-index: 4;
 .grid-container .grid-item:nth-of-type(9) button:active{
   transform:translatey(0);
 	box-shadow: 0 0 0 var(--border-color);
+}
+
+/* Gargamel */
+main>div>img{
+  z-index: 10;
+  width: 50em;
+  translate: 100em -53em;
+  
+  opacity: 0;
+}
+
+
+
+
+/*****************************/
+/*   GARGAMEL MAAKT KAPOT    */
+/*****************************/
+
+/* deze classes toevoegen als er op de NIET smurfen knop wordt geklikt, van links naar rechts */
+body.gargamelLopen main>div>img{
+  animation: gargamel 12s ease-in;
+  animation-fill-mode: forwards;
+}
+
+/* twee losse smurfen plat  */
+/* body.gargamelLopen main ol li:nth-of-type(9) img:nth-of-type(3){
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+}
+
+body.gargamelLopen main ol li:nth-of-type(9) img:nth-of-type(2){
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+} */
+
+/* list item 8 plat uit 2017*/
+/* body.gargamelLopen main ol li:nth-of-type(8)>img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 4.5s;
+}
+
+body.gargamelLopen main ol li:nth-of-type(8) figure img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 5s;
+} */
+
+/* list item 7 plat uit 2013 */
+/* body.gargamelLopen main ol li:nth-of-type(7)>img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 5.8s;
+}
+
+body.gargamelLopen main ol li:nth-of-type(7) figure img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 6.2s;
+} */
+
+/* list item 6 plat uit 2011 */
+/* body.gargamelLopen main ol li:nth-of-type(6)>img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 6.7s;
+}
+
+body.gargamelLopen main ol li:nth-of-type(6) figure img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 7s;
+} */
+
+/* list item 5 plat uit 1981 */
+/* body.gargamelLopen main ol li:nth-of-type(5)>img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 7.6s;
+}
+
+body.gargamelLopen main ol li:nth-of-type(5) figure img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 8.1s;
+} */
+
+/* list item 4 plat uit 1975 */
+/* body.gargamelLopen main ol li:nth-of-type(4)>img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 8.5s;
+}
+
+body.gargamelLopen main ol li:nth-of-type(4) figure img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 9s;
+} */
+
+/* list item 3 plat uit 1960 */
+/* body.gargamelLopen main ol li:nth-of-type(3)>img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 9.5s;
+}
+
+body.gargamelLopen main ol li:nth-of-type(3) figure img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 9.8s;
+} */
+
+/* list item 2 plat uit 1959 */
+/* body.gargamelLopen main ol li:nth-of-type(2)>img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 10.2s;
+}
+
+body.gargamelLopen main ol li:nth-of-type(2) figure img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 10.6s;
+} */
+
+/* list item 2 plat uit 1958 */
+/* body.gargamelLopen main ol li:nth-of-type(1)>img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 10.9s;
+}
+
+body.gargamelLopen main ol li:nth-of-type(1) figure img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 11.3s;
+} */
+
+
+
+
+
+
+/*****************************/
+/*      MAIN KEYFRAMES       */
+/*****************************/
+
+@media (prefers-reduced-motion: no-preference){
+  /* gargamel heen en weer laten lopen  */
+  @keyframes gargamel{
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      translate: -100em -53em;
+
+    }
+  }
+
+  /* smurf plat stampen als gargamel eroverheen loopt  */
+  @keyframes smurfPlatstampen{
+    0% {
+      transform: perspective(30em) rotateX(0deg) scale(1, 1);
+    }
+    100% {
+      transform: perspective(30em) rotateX(60deg) scale(1.2, 1);
+    }
+  }
+
 }

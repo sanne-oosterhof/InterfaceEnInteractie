@@ -1,4 +1,6 @@
 console.log("Howdy!");
+console.log("darkmodeToggle:", darkmodeToggle);
+console.log("darkmodeTekst:", darkmodeTekst);
 
 // VARIABELEN 
 // variabelen voor muziekbutton
@@ -11,13 +13,12 @@ var speelAf = false;
 // variabelen voor darkmode 
 var darkmodeTekst = document.querySelector("header section:nth-of-type(2) p span")
 var darkmodeToggle = document.querySelector("header section label input[type='checkbox']");
-var backgroundImage = document.querySelector("main ol.background-light");
+var backgroundImage = document.querySelector("main");
 
 // Variabelen voor extra's achteraan 
-var smurfNietButton = document.querySelector("main ol li button:nth-of-type(1)");
-var smurfImgMetLiaan = document.querySelector("main ol li:nth-of-type(9) img:nth-of-type(1)");
-var gargamelImg = document.querySelector("main ol li:nth-of-type(10) img");
-var normaleSmurf = document.querySelector("main ol li:nth-of-type(9) img:nth-of-type(2)");
+var smurfNietButton = document.querySelector("main div div:nth-of-type(9) button");
+var gargamelImg = document.querySelector("main div>img");
+// var normaleSmurf = document.querySelector("main ol li:nth-of-type(9) img:nth-of-type(2)");
 
 
 
