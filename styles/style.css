@@ -59,7 +59,7 @@ img {
 /*********************/
 
 :root {
-  --pagina-bg-color:#A7CEEF;
+  --pagina-bg-color:#82BFD7;
   --bg-color:#FFFFFF;
   --bg-color-gras: #ACBD3D;
   --header-primary-color:#0055A4;
@@ -78,7 +78,7 @@ img {
 
 /* DONKER THEMA */
 :root.darkmode {
-  --pagina-bg-color:#222222;
+  --pagina-bg-color:#6899AC;
   --bg-color:#3a3a3a;
   --bg-color-gras: #787c2c;
   --header-primary-color:#cc1c1c;
@@ -663,8 +663,7 @@ z-index: 4;
 main>div>img{
   z-index: 10;
   width: 50em;
-  translate: 100em -53em;
-  
+  translate: 100em -52em;
   opacity: 0;
 }
 
@@ -677,7 +676,7 @@ main>div>img{
 
 /* deze classes toevoegen als er op de NIET smurfen knop wordt geklikt, van links naar rechts */
 body.gargamelLopen main>div>img{
-  animation: gargamel 12s ease-in;
+  animation: gargamel 20s ease-in;
   animation-fill-mode: forwards;
 }
 
@@ -813,10 +812,21 @@ body.gargamelLopen main ol li:nth-of-type(1) figure img{
     0% {
       opacity: 1;
     }
+    20% {
+      transform: translateX(-140em) translateY(0) rotateY(0);
+    }
+    40% {
+      transform: translateX(-140em) translateY(-23em) rotateY(180deg);
+    }
+    60% {
+      transform: translateX(140em) translateY(-23em) rotateY(180deg);
+    }
+    80% {
+      transform: translateX(0) translateY(-50em) rotateY(0);
+    }
     100% {
       opacity: 1;
-      translate: -100em -53em;
-
+      transform: translateX(-140em) translateY(-50em) rotateY(0);
     }
   }
 
