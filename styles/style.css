@@ -680,122 +680,109 @@ body.gargamelLopen main>div>img{
   animation-fill-mode: forwards;
 }
 
-/* twee losse smurfen plat  */
-/* body.gargamelLopen main ol li:nth-of-type(9) img:nth-of-type(3){
-  animation: smurfPlatstampen .1s ease-in-out;
-  animation-fill-mode: forwards;
-  animation-delay: 2.5s;
-}
-
-body.gargamelLopen main ol li:nth-of-type(9) img:nth-of-type(2){
-  animation: smurfPlatstampen .1s ease-in-out;
-  animation-fill-mode: forwards;
-  animation-delay: 3s;
-} */
-
 /* list item 8 plat uit 2017*/
-/* body.gargamelLopen main ol li:nth-of-type(8)>img{
+body.gargamelLopen main div div:nth-of-type(8)>img {
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
-  animation-delay: 4.5s;
+  animation-delay: 3.2s;
 }
 
-body.gargamelLopen main ol li:nth-of-type(8) figure img{
+body.gargamelLopen main div div:nth-of-type(8) figure img{
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
-  animation-delay: 5s;
-} */
+  animation-delay: 3.8s;
+}
 
 /* list item 7 plat uit 2013 */
-/* body.gargamelLopen main ol li:nth-of-type(7)>img{
+body.gargamelLopen main div div:nth-of-type(7)>img{
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
-  animation-delay: 5.8s;
+  animation-delay: 4.3s;
 }
 
-body.gargamelLopen main ol li:nth-of-type(7) figure img{
+body.gargamelLopen main div div:nth-of-type(7) figure img{
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
-  animation-delay: 6.2s;
-} */
-
-/* list item 6 plat uit 2011 */
-/* body.gargamelLopen main ol li:nth-of-type(6)>img{
-  animation: smurfPlatstampen .1s ease-in-out;
-  animation-fill-mode: forwards;
-  animation-delay: 6.7s;
+  animation-delay: 4.7s;
 }
 
-body.gargamelLopen main ol li:nth-of-type(6) figure img{
-  animation: smurfPlatstampen .1s ease-in-out;
-  animation-fill-mode: forwards;
-  animation-delay: 7s;
-} */
-
-/* list item 5 plat uit 1981 */
-/* body.gargamelLopen main ol li:nth-of-type(5)>img{
-  animation: smurfPlatstampen .1s ease-in-out;
-  animation-fill-mode: forwards;
-  animation-delay: 7.6s;
-}
-
-body.gargamelLopen main ol li:nth-of-type(5) figure img{
-  animation: smurfPlatstampen .1s ease-in-out;
-  animation-fill-mode: forwards;
-  animation-delay: 8.1s;
-} */
-
-/* list item 4 plat uit 1975 */
-/* body.gargamelLopen main ol li:nth-of-type(4)>img{
-  animation: smurfPlatstampen .1s ease-in-out;
-  animation-fill-mode: forwards;
-  animation-delay: 8.5s;
-}
-
-body.gargamelLopen main ol li:nth-of-type(4) figure img{
+/*  list item 4 plat uit 1975 */
+body.gargamelLopen main div div:nth-of-type(4)>img{
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
   animation-delay: 9s;
-} */
+}
+
+body.gargamelLopen main div div:nth-of-type(4) figure img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 8.7s;
+}
+
+/* list item 5 plat uit 1981 */
+body.gargamelLopen main div div:nth-of-type(5)>img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 9.7s;
+}
+
+body.gargamelLopen main div div:nth-of-type(5) figure img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 9.35s;
+}
+
+/*  list item 6 plat uit 2011  */
+body.gargamelLopen main div div:nth-of-type(6)>img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 10.45s;
+}
+
+body.gargamelLopen main div div:nth-of-type(6) figure img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 10s;
+}
 
 /* list item 3 plat uit 1960 */
-/* body.gargamelLopen main ol li:nth-of-type(3)>img{
+body.gargamelLopen main div div:nth-of-type(3)>img{
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
-  animation-delay: 9.5s;
+  animation-delay: 16.9s;
 }
 
-body.gargamelLopen main ol li:nth-of-type(3) figure img{
+body.gargamelLopen main div div:nth-of-type(3) figure img{
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
-  animation-delay: 9.8s;
-} */
+  animation-delay: 17.5s;
+}
 
 /* list item 2 plat uit 1959 */
-/* body.gargamelLopen main ol li:nth-of-type(2)>img{
+body.gargamelLopen main div div:nth-of-type(2)>img{
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
-  animation-delay: 10.2s;
+  animation-delay: 18.1s;
 }
 
-body.gargamelLopen main ol li:nth-of-type(2) figure img{
+body.gargamelLopen main div div:nth-of-type(2) figure img{
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
-  animation-delay: 10.6s;
-} */
-
-/* list item 2 plat uit 1958 */
-/* body.gargamelLopen main ol li:nth-of-type(1)>img{
-  animation: smurfPlatstampen .1s ease-in-out;
-  animation-fill-mode: forwards;
-  animation-delay: 10.9s;
+  animation-delay: 18.5s;
 }
 
-body.gargamelLopen main ol li:nth-of-type(1) figure img{
+/* list item 1 plat uit 1958 */
+body.gargamelLopen main div div:nth-of-type(1)>img{
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
-  animation-delay: 11.3s;
-} */
+  animation-delay: 19s;
+}
+
+body.gargamelLopen main div div:nth-of-type(1) figure img{
+  animation: smurfPlatstampen .1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 19.5s;
+}
 
 
 
@@ -812,16 +799,16 @@ body.gargamelLopen main ol li:nth-of-type(1) figure img{
     0% {
       opacity: 1;
     }
-    20% {
+    26.6% {
       transform: translateX(-140em) translateY(0) rotateY(0);
     }
-    40% {
+    36.6% {
       transform: translateX(-140em) translateY(-23em) rotateY(180deg);
     }
-    60% {
+    63.3% {
       transform: translateX(140em) translateY(-23em) rotateY(180deg);
     }
-    80% {
+    73.3% {
       transform: translateX(0) translateY(-50em) rotateY(0);
     }
     100% {
@@ -836,8 +823,7 @@ body.gargamelLopen main ol li:nth-of-type(1) figure img{
       transform: perspective(30em) rotateX(0deg) scale(1, 1);
     }
     100% {
-      transform: perspective(30em) rotateX(60deg) scale(1.2, 1);
+      transform: perspective(30em) rotateX(65deg) scale(1.3, 1);
     }
   }
-
 }
