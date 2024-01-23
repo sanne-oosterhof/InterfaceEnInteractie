@@ -57,7 +57,7 @@ img {
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
-
+/* #FFCC00 */
 :root {
   --pagina-bg-color:#82BFD7;
   --bg-color:#FFFFFF;
@@ -73,7 +73,10 @@ img {
   --smurf-color-light:#63b2f9;
   --error-color: #cc1c1c;
   --error-color-hover: #ac0d0d;
+  --button-color: #FFCC00;
   --hover-button: linear-gradient(90deg, rgba(15, 109, 198, 1) 0%, rgba(26, 133, 233, 1) 50%, rgba(194, 225, 255, 100) 50%, rgba(194, 225, 255, 100) 100%);
+  --hover-button: linear-gradient(90deg,  rgb(18, 120, 215) 0%, rgba(26, 133, 233, 1) 50%, rgb(255, 204, 0) 50%, rgb(255, 204, 0) 100%);
+
 }
 
 /* DONKER THEMA */
@@ -92,6 +95,7 @@ img {
   --smurf-color-light:#f03a3a;
   --error-color: #cc1c1c;
   --error-color-hover: #ac0d0d;
+  --button-color: #FFCC00;
   --hover-button: linear-gradient(90deg, rgba(2, 63, 120, 1) 0%, rgba(2, 63, 120, 1) 50%, rgba(0, 85, 164, 1)  50%, rgba(0, 85, 164, 1) 100%);
 }
 
@@ -242,7 +246,7 @@ header section button:active{
 /*****************************/
 
 header section:nth-of-type(2){
-  background-color: var(--bg-color);
+  background-color: var(--header-primary-color);
 
   display: flex;
   align-items: center;
@@ -258,7 +262,7 @@ header section:nth-of-type(2){
 header section:nth-of-type(2) P {
   font-family: proximaNovaLight, Arial, Helvetica, sans-serif;
   font-weight: 600;
-  color: var(--text-color);
+  color: var(--text-color-light);
 }
 
 /* bron voor de toggle switch: https://www.w3schools.com/howto/howto_css_switch.asp  */
@@ -277,7 +281,7 @@ header section:nth-of-type(2) label input {
 }
 
 header section:nth-of-type(2) label span{
-  background-color: var(--header-secondary-color); 
+  background-color: var(--text-color-light); 
   border-radius: 2.125em;               
 
   position: absolute;
@@ -297,7 +301,7 @@ header section:nth-of-type(2) label span:hover{
 /* Het bolletje in de toggle */
 header section:nth-of-type(2) label span:before {
   content: "";
-  background-color: var(--bg-color);
+  background-color: var(--button-color);
   border-radius: 50%;
 
   position: absolute;
@@ -315,7 +319,7 @@ header section:nth-of-type(2) label input:checked + span {
 }
 
 header section:nth-of-type(2) label input:focus + span {
-  box-shadow: 0 0 0 .2em var(--header-primary-color);
+  box-shadow: 0 0 0 .2em var(--button-color);
 }
 
 /* bolletje verplaatsen als deze aangeklikt wordt */
@@ -412,7 +416,6 @@ main {
   grid-row-gap: 8em;
   list-style-type: none;
   padding: 17em 0 0 0;
-
 }
 
 .grid-container .grid-item {
@@ -691,6 +694,7 @@ body.gargamelLopen main div div:nth-of-type(8) figure img{
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
   animation-delay: 3.8s;
+  filter: none;
 }
 
 /* list item 7 plat uit 2013 */
@@ -704,6 +708,7 @@ body.gargamelLopen main div div:nth-of-type(7) figure img{
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
   animation-delay: 4.7s;
+  filter: none;
 }
 
 /*  list item 4 plat uit 1975 */
@@ -717,6 +722,7 @@ body.gargamelLopen main div div:nth-of-type(4) figure img{
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
   animation-delay: 8.7s;
+  filter: none;
 }
 
 /* list item 5 plat uit 1981 */
@@ -730,6 +736,7 @@ body.gargamelLopen main div div:nth-of-type(5) figure img{
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
   animation-delay: 9.35s;
+  filter: none;
 }
 
 /*  list item 6 plat uit 2011  */
@@ -743,6 +750,7 @@ body.gargamelLopen main div div:nth-of-type(6) figure img{
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
   animation-delay: 10s;
+  filter: none;
 }
 
 /* list item 3 plat uit 1960 */
@@ -756,6 +764,7 @@ body.gargamelLopen main div div:nth-of-type(3) figure img{
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
   animation-delay: 17.5s;
+  filter: none;
 }
 
 /* list item 2 plat uit 1959 */
@@ -769,6 +778,7 @@ body.gargamelLopen main div div:nth-of-type(2) figure img{
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
   animation-delay: 18.5s;
+  filter: none;
 }
 
 /* list item 1 plat uit 1958 */
@@ -782,6 +792,7 @@ body.gargamelLopen main div div:nth-of-type(1) figure img{
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
   animation-delay: 19.5s;
+  filter: none;
 }
 
 
