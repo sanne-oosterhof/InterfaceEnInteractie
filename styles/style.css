@@ -27,6 +27,7 @@
 
 
 
+
 /**************/
 /* CSS REMEDY */
 /**************/
@@ -49,7 +50,40 @@ button:not([disabled]) {
 img {
   max-width:100%;
 }
- 
+
+
+
+
+
+
+/*********************/
+/*  CUSTOM SCROLBAR  */
+/*********************/
+
+/* bron: https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp */
+::-webkit-scrollbar {
+  width: .6em;
+  background-color: var(--bg-color-scrollbar);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  cursor: url('../images/cursorNormaal.png'), auto;
+    border-radius: 0.625em;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  cursor: url('../images/cursorPointer.png'), auto;
+  background: var(--header-primary-color);
+  border-radius: 0.625em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--smurf-color-light);
+}
+
+
 
 
 
@@ -57,24 +91,28 @@ img {
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
-/* #FFCC00 */
 :root {
   --pagina-bg-color:#82BFD7;
   --bg-color:#FFFFFF;
-  --bg-color-gras: #ACBD3D;
+  --bg-color-scrollbar: #fbfbfb;
+
   --header-primary-color:#0055A4;
   --header-secondary-color:#ccc;
   --header-text-shadow:#FFFFFF;
+
   --box-shadow: #333;
-  --img-shadow: #0009;
+  --img-shadow: rgba(0, 0, 0, 0.54);
+  --img-shadow-light: rgba(0, 0, 0, 0.314);
+
   --text-color-light: #ffffff;
   --text-color: #1b1b1b;
   --border-color:#1b1b1b;
   --smurf-color-light:#63b2f9;
+
   --error-color: #cc1c1c;
   --error-color-hover: #920303;
+
   --button-color: #FFCC00;
-  --hover-button: linear-gradient(90deg, rgba(15, 109, 198, 1) 0%, rgba(26, 133, 233, 1) 50%, rgba(194, 225, 255, 100) 50%, rgba(194, 225, 255, 100) 100%);
   --hover-button: linear-gradient(90deg,  rgb(18, 120, 215) 0%, rgba(26, 133, 233, 1) 50%, rgb(255, 204, 0) 50%, rgb(255, 204, 0) 100%);
 
 }
@@ -83,18 +121,24 @@ img {
 :root.darkmode {
   --pagina-bg-color:#6899AC;
   --bg-color:#3a3a3a;
-  --bg-color-gras: #787c2c;
+  --bg-color-scrollbar: #b2b2b2;
+
   --header-primary-color:#cc1c1c;
   --header-secondary-color:#767676;
   --header-text-shadow:#d5d5d5;
+
   --box-shadow: #333;
-  --img-shadow: #0009;
+  --img-shadow: rgba(0, 0, 0, 0.54);
+  --img-shadow-light: rgba(0, 0, 0, 0.314);
+
   --text-color-light: #ffffff;
   --text-color: #ffffff;
   --border-color:#d5d5d5;
   --smurf-color-light:#f03a3a;
+
   --error-color: #63b2f9;
   --error-color-hover: #0055A4;
+
   --button-color: #FFCC00;
   --hover-button: linear-gradient(90deg, rgba(2, 63, 120, 1) 0%, rgba(2, 63, 120, 1) 50%, rgba(0, 85, 164, 1)  50%, rgba(0, 85, 164, 1) 100%);
 }
@@ -431,6 +475,7 @@ main {
   width: 18em; 
   height: auto;
   border-radius: 8px;
+  filter: drop-shadow(-0.1em 0.25em .2em var(--img-shadow-light));
 }
 
 .grid-container .grid-item figure{
@@ -452,6 +497,9 @@ main {
 /**********************/
 /*       FIGURE       */
 /**********************/
+figure img{
+  filter: drop-shadow(-0.1em 0.25em .2em var(--img-shadow-light));
+}
 
 figure:focus img{
   filter: drop-shadow(-0.1em 0.25em .2em var(--img-shadow));
@@ -472,8 +520,8 @@ figcaption{
   border-radius: 1.5em;
 
   bottom: 14em; 
-  left: 40%; /* Plaats het in het midden van de grid-item */
-  transform: translateX(-50%); /* Centreer horizontaal */
+  left: 35%; 
+  transform: translateX(-50%);
 }
 
 /* toon tekstwolk wanneer de muis over de smurf beweegt */
@@ -635,6 +683,8 @@ z-index: 4;
 
 
 
+
+
 /**************************/
 /*    EXTRA'S ACHTERAAN   */
 /**************************/
@@ -691,7 +741,6 @@ z-index: 4;
   transform:translatey(0);
 	box-shadow: 0 0 0 var(--border-color);
 }
-
 
 /* Gargamel */
 main section img:nth-of-type(1){
@@ -841,11 +890,16 @@ body.gargamelLopen main div div:nth-of-type(1) figure img{
   filter: none;
 }
 
-
 /* deze class toevoegen als er op de WEL smurfen knop wordt geklikt */
 .smurfVaren{
   animation: varen 12s ease-in-out infinite;
 }
+
+.smurfTweeVaren{
+  animation: varenTwee 14s ease-in-out infinite;
+}
+
+
 
 
 
@@ -888,6 +942,7 @@ body.gargamelLopen main div div:nth-of-type(1) figure img{
     }
   }
 
+  /* Eerste bootje heen en weer varen */
   @keyframes varen{
     0% {
       transform: translateX(16em) translateY(11em) rotateY(0);
@@ -903,6 +958,25 @@ body.gargamelLopen main div div:nth-of-type(1) figure img{
     }
     100% {
       transform: translateX(16em) translateY(11em) rotateY(0);
+    }
+  }
+
+  /* Twee bootje heen en weer laten valen  */
+  @keyframes varenTwee{
+    0% {
+      transform: translateX(-35em) translateY(32em) rotateY(180deg);
+    }
+    25% {
+      transform: translateX(-15em) translateY(38em) rotateY(180deg);
+    }
+    50% {
+      transform: translateX(-10em) translateY(44em) rotateY(180deg);
+    }
+    75% {
+      transform: translateX(-25em) translateY(49em) rotateY(180deg);
+    }
+    100% {
+      transform: translateX(-35em) translateY(32em) rotateY(180deg);
     }
   }
 }

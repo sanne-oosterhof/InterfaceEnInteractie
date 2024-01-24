@@ -24,11 +24,11 @@ var gargamelImg = document.querySelector("main section img:nth-of-type(1)");
 geluidButton.onclick = smurfIntro;
 darkmodeToggle.addEventListener("change", switchTheme);
 smurfNietButton.addEventListener("click", gargamelMaaktKapot)
-smurfWelButton.addEventListener("click", smurfGaatVaren)
-// smurfWelButton.addEventListener("click", function() {
-//   smurfGaatVaren();
-//   smurfGaatVarenTwee();
-// });
+// smurfWelButton.addEventListener("click", smurfGaatVaren)
+smurfWelButton.addEventListener("click", function() {
+  smurfGaatVaren();
+  tweedeSmurfVaren(); 
+});
 
 
 // FUNCTIES 
@@ -72,5 +72,17 @@ function smurfGaatVaren(){
     smurfKanoImg.src = "images/smurfKano.gif";
   } else {
     smurfKanoImg.src = "images/smurfKanoStil.png";
+  }
+}
+
+
+// Tweede smurf gaat ook varen
+function tweedeSmurfVaren() {
+  smurfKanoImgTwee.classList.toggle("smurfTweeVaren")
+
+  if (smurfKanoImg.classList.contains("smurfVaren")) {
+    smurfKanoImgTwee.src = "images/smurfKano.gif";
+  } else {
+    smurfKanoImgTwee.src = "images/smurfKanoStil.png";
   }
 }
