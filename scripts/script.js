@@ -1,7 +1,3 @@
-console.log("Howdy!");
-console.log("darkmodeToggle:", darkmodeToggle);
-console.log("darkmodeTekst:", darkmodeTekst);
-
 // VARIABELEN 
 // variabelen voor muziekbutton
 // Voor geluid deels als bron ChatGPT, voor prompt zie miro
@@ -16,9 +12,11 @@ var darkmodeToggle = document.querySelector("header section label input[type='ch
 var backgroundImage = document.querySelector("main");
 
 // Variabelen voor extra's achteraan 
-var smurfNietButton = document.querySelector("main div div:nth-of-type(9) button");
-var gargamelImg = document.querySelector("main div>img");
-// var normaleSmurf = document.querySelector("main ol li:nth-of-type(9) img:nth-of-type(2)");
+var smurfNietButton = document.querySelector("main div div:nth-of-type(9) button:nth-of-type(1)");
+var smurfWelButton = document.querySelector("main div div:nth-of-type(9) button:nth-of-type(2)");
+var smurfKanoImg = document.querySelector("main section img:nth-of-type(2)");
+var smurfKanoImgTwee = document.querySelector("main section img:nth-of-type(3)");
+var gargamelImg = document.querySelector("main section img:nth-of-type(1)");
 
 
 
@@ -26,7 +24,11 @@ var gargamelImg = document.querySelector("main div>img");
 geluidButton.onclick = smurfIntro;
 darkmodeToggle.addEventListener("change", switchTheme);
 smurfNietButton.addEventListener("click", gargamelMaaktKapot)
-
+smurfWelButton.addEventListener("click", smurfGaatVaren)
+// smurfWelButton.addEventListener("click", function() {
+//   smurfGaatVaren();
+//   smurfGaatVarenTwee();
+// });
 
 
 // FUNCTIES 
@@ -55,8 +57,20 @@ function switchTheme(){
   }
 }
 
+// Gargamel maakt stuk
 function gargamelMaaktKapot(){
   document.body.classList.add("gargamelLopen");
   smurfNietButton.textContent = "Dit is allemaal jouw schuld!";
   smurfWelButton.textContent = "Verkeerde knop gesmurft";
+}
+
+// Smurf gaat varen
+function smurfGaatVaren(){
+  smurfKanoImg.classList.toggle("smurfVaren")
+
+  if (smurfKanoImg.classList.contains("smurfVaren")) {
+    smurfKanoImg.src = "images/smurfKano.gif";
+  } else {
+    smurfKanoImg.src = "images/smurfKanoStil.png";
+  }
 }

@@ -72,7 +72,7 @@ img {
   --border-color:#1b1b1b;
   --smurf-color-light:#63b2f9;
   --error-color: #cc1c1c;
-  --error-color-hover: #ac0d0d;
+  --error-color-hover: #920303;
   --button-color: #FFCC00;
   --hover-button: linear-gradient(90deg, rgba(15, 109, 198, 1) 0%, rgba(26, 133, 233, 1) 50%, rgba(194, 225, 255, 100) 50%, rgba(194, 225, 255, 100) 100%);
   --hover-button: linear-gradient(90deg,  rgb(18, 120, 215) 0%, rgba(26, 133, 233, 1) 50%, rgb(255, 204, 0) 50%, rgb(255, 204, 0) 100%);
@@ -93,8 +93,8 @@ img {
   --text-color: #ffffff;
   --border-color:#d5d5d5;
   --smurf-color-light:#f03a3a;
-  --error-color: #cc1c1c;
-  --error-color-hover: #ac0d0d;
+  --error-color: #63b2f9;
+  --error-color-hover: #0055A4;
   --button-color: #FFCC00;
   --hover-button: linear-gradient(90deg, rgba(2, 63, 120, 1) 0%, rgba(2, 63, 120, 1) 50%, rgba(0, 85, 164, 1)  50%, rgba(0, 85, 164, 1) 100%);
 }
@@ -625,7 +625,12 @@ bottom: 13em;
 z-index: 4;
 }
 
-
+/* Grid item 9 BUTTON */
+.grid-container .grid-item:nth-of-type(9) {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
 
 
 
@@ -635,7 +640,7 @@ z-index: 4;
 /**************************/
 
 /* SMURF NIET button  */
-.grid-container .grid-item:nth-of-type(9) button{
+.grid-container .grid-item:nth-of-type(9) button:nth-of-type(1){
   background: var(--error-color);
   color: var(--text-color-light);
 
@@ -646,29 +651,70 @@ z-index: 4;
 }
 
 /* Bron voor button states: https://codepen.io/shooft/pen/eYKdyxY?editors=1100 */
-.grid-container .grid-item:nth-of-type(9) button:hover{
+.grid-container .grid-item:nth-of-type(9) button:nth-of-type(1):hover{
   background: var(--error-color-hover);
   cursor: url('../images/cursorOmlaag.png'), auto;
 }
 
-.grid-container .grid-item:nth-of-type(9) button:focus-visible{
+.grid-container .grid-item:nth-of-type(9) button:nth-of-type(1):focus-visible{
   transform:translatey(-.75em);
 	outline: none;
 	box-shadow:0 .75em 0 var(--border-color);
 }
 
-.grid-container .grid-item:nth-of-type(9) button:active{
+.grid-container .grid-item:nth-of-type(9) button:nth-of-type(1):hover:active{
   transform:translatey(0);
 	box-shadow: 0 0 0 var(--border-color);
 }
 
+/* SMURF WEL button  */
+.grid-container .grid-item:nth-of-type(9) button:nth-of-type(2){
+  background: var(--smurf-color-light);
+  background-size: 200% 100%;
+  background-position: 100% 0%;
+  color: var(--text-color-light);	
+  width: 10em;
+}
+
+.grid-container .grid-item:nth-of-type(9) button:nth-of-type(2):hover{
+	background: var(--header-primary-color);
+  cursor: url('../images/cursorPointer.png'), auto;
+}
+
+.grid-container .grid-item:nth-of-type(9) button:nth-of-type(2):focus-visible{
+  transform:translatey(-.75em);
+	outline: none;
+	box-shadow:0 .75em 0 var(--border-color);
+}
+
+.grid-container .grid-item:nth-of-type(9) button:nth-of-type(2):active{
+  transform:translatey(0);
+	box-shadow: 0 0 0 var(--border-color);
+}
+
+
 /* Gargamel */
-main>div>img{
+main section img:nth-of-type(1){
   z-index: 10;
   width: 50em;
-  translate: 100em -52em;
+  translate: 100em -68em;
   opacity: 0;
 }
+
+/* Smurf in de kano 1 en 2 */
+main section img:nth-of-type(2){
+  width: 11em;
+  position: absolute;
+  transform: translateX(16em) translateY(11em) rotateY(0);
+}
+
+main section img:nth-of-type(3){
+  width: 11em;
+  position: absolute;
+  transform: translateX(-35em) translateY(32em) rotateY(180deg);
+}
+
+
 
 
 
@@ -678,7 +724,7 @@ main>div>img{
 /*****************************/
 
 /* deze classes toevoegen als er op de NIET smurfen knop wordt geklikt, van links naar rechts */
-body.gargamelLopen main>div>img{
+body.gargamelLopen main section img:nth-of-type(1){
   animation: gargamel 20s ease-in;
   animation-fill-mode: forwards;
 }
@@ -785,17 +831,21 @@ body.gargamelLopen main div div:nth-of-type(2) figure img{
 body.gargamelLopen main div div:nth-of-type(1)>img{
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
-  animation-delay: 19s;
+  animation-delay: 18.9s;
 }
 
 body.gargamelLopen main div div:nth-of-type(1) figure img{
   animation: smurfPlatstampen .1s ease-in-out;
   animation-fill-mode: forwards;
-  animation-delay: 19.5s;
+  animation-delay: 19.2s;
   filter: none;
 }
 
 
+/* deze class toevoegen als er op de WEL smurfen knop wordt geklikt */
+.smurfVaren{
+  animation: varen 12s ease-in-out infinite;
+}
 
 
 
@@ -811,20 +861,20 @@ body.gargamelLopen main div div:nth-of-type(1) figure img{
       opacity: 1;
     }
     26.6% {
-      transform: translateX(-140em) translateY(0) rotateY(0);
+      transform: translateX(-170em) translateY(0) rotateY(0);
     }
     36.6% {
-      transform: translateX(-140em) translateY(-23em) rotateY(180deg);
+      transform: translateX(-170em) translateY(-24em) rotateY(180deg);
     }
     63.3% {
-      transform: translateX(140em) translateY(-23em) rotateY(180deg);
+      transform: translateX(170em) translateY(-24em) rotateY(180deg);
     }
     73.3% {
-      transform: translateX(0) translateY(-50em) rotateY(0);
+      transform: translateX(0) translateY(-52em) rotateY(0);
     }
     100% {
       opacity: 1;
-      transform: translateX(-140em) translateY(-50em) rotateY(0);
+      transform: translateX(-170em) translateY(-52em) rotateY(0);
     }
   }
 
@@ -835,6 +885,24 @@ body.gargamelLopen main div div:nth-of-type(1) figure img{
     }
     100% {
       transform: perspective(30em) rotateX(65deg) scale(1.3, 1);
+    }
+  }
+
+  @keyframes varen{
+    0% {
+      transform: translateX(16em) translateY(11em) rotateY(0);
+    }
+    25% {
+      transform: translateX(0) translateY(15em) rotateY(0);
+    }
+    50% {
+      transform: translateX(16em) translateY(18em) rotateY(0);
+    }
+    75% {
+      transform: translateX(25em) translateY(15em) rotateY(0);
+    }
+    100% {
+      transform: translateX(16em) translateY(11em) rotateY(0);
     }
   }
 }
